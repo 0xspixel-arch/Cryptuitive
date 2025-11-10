@@ -1,0 +1,131 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.bottom-nav {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-top: 1px solid var(--border);
+  background-color: #ffffff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 100;
+}
+
+@media (max-height: 600px) {
+  .bottom-nav {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  gap: var(--spacing-xs);
+  border-radius: var(--radius-md);
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-item:hover {
+  background-color: var(--surface);
+  color: var(--primary);
+}
+
+.nav-item.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.nav-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offline-banner {
+  position: fixed;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background-color: var(--warning);
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 50;
+  animation: slideUp var(--transition-normal) ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom-nav {
+    flex-direction: column;
+    width: 200px;
+    border-top: none;
+    border-right: 1px solid var(--border);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .app {
+    flex-direction: row;
+  }
+
+  .app-content {
+    flex: 1;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+
+  .nav-item span {
+    margin-left: var(--spacing-md);
+  }
+
+  .offline-banner {
+    bottom: auto;
+    top: 0;
+  }
+}

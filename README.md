@@ -1,6 +1,10 @@
 # Crypto Insight App
 
-A React Native Android application for cryptocurrency market analysis, AI-powered chat, and backtesting trading strategies.
+**Two versions available:**
+- **React Native Android** - Native mobile app
+- **Progressive Web App (PWA)** - Web-based with offline support (see `web/` folder)
+
+A comprehensive cryptocurrency market analysis platform with AI-powered chat and backtesting trading strategies.
 
 ## Features
 
